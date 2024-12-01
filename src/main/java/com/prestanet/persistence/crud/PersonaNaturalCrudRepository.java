@@ -10,8 +10,10 @@ import java.util.Optional;
 
 public interface PersonaNaturalCrudRepository extends CrudRepository<PersonaNatural, Integer> {
 
-    Optional<PersonaNatural> findByNombreAndDni(String nombreClienteN, String dni);
+    PersonaNatural findByDni(String dni);
 
-    Optional<PersonaNatural> findById(int id);
+    PersonaNatural getAllNaturalCustomers();
+
+    Optional<PersonaNatural> findByName(String nombreClienteN);
 
 }

@@ -1,6 +1,7 @@
 package com.prestanet.persistence.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "PERSONA_NATURAL")
@@ -15,6 +16,9 @@ public class PersonaNatural {
 
     @Column(name = "dni", unique = true, length = 8)
     private String dni;
+
+    @OneToMany(mappedBy = "personaNatural", cascade = CascadeType.ALL)
+    private List<Prestamo> prestamos;
 
     // Getters y Setters
     public Integer getIdClienteN() { return idClienteN;
